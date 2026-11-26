@@ -691,6 +691,9 @@ body.menu-open .site-header .brand-logo--color { opacity: 0; }
 .footer-wa { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 1.15rem; font-weight: 600; color: var(--cream-50); transition: color var(--t-fast); }
 .footer-wa .icon { color: var(--gold-400); }
 .footer-wa:hover { color: var(--gold-300); }
+.footer-call { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.95rem; font-weight: 600; color: rgba(246, 239, 224, 0.78); transition: color var(--t-fast); }
+.footer-call .icon { color: var(--gold-400); }
+.footer-call:hover { color: var(--gold-300); }
 .footer-directions { display: inline-flex; align-items: center; gap: 0.4rem; margin-left: 1.6rem; font-size: 0.9rem; font-weight: 600; color: var(--gold-300); }
 .footer-directions:hover { color: var(--cream-50); }
 /* links underline in gold from the left on hover */
@@ -1244,8 +1247,8 @@ body.menu-open .site-header .brand-logo--color { opacity: 0; }
   .stepper button { width: 40px; height: 40px; }
 
   /* text links get a finger-sized tap area without changing how they look */
-  .text-arrow, .footer-wa, .footer-directions, .order-band-area a { position: relative; }
-  .text-arrow::before, .footer-wa::before, .footer-directions::before, .order-band-area a::before { content: ""; position: absolute; inset: -10px -6px; }
+  .text-arrow, .footer-wa, .footer-call, .footer-directions, .order-band-area a { position: relative; }
+  .text-arrow::before, .footer-wa::before, .footer-call::before, .footer-directions::before, .order-band-area a::before { content: ""; position: absolute; inset: -10px -6px; }
   .order-band-area { flex-wrap: wrap; row-gap: 0.25rem; }
   .order-band-area a { white-space: nowrap; }
 }

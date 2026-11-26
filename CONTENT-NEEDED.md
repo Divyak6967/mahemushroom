@@ -8,9 +8,9 @@ Items are in priority order. Tick them off as they arrive.
 ## 1. Basic facts (quick answers)
 
 - [x] **WhatsApp order number:** +91 81248 34607. Connected to every "Order" button and the footer.
-- [ ] **Phone number:** for calls, shown in the footer. It can be the same as WhatsApp.
+- [x] **Phone number:** same as WhatsApp, +91 81248 34607 (tap-to-call in the footer).
 - [x] **Farm address:** No. 2, Perumal Koil Street, Keezhavalam, Madhurandhagam – 603 306. Shown in the footer, the order section and the order window as the delivery area.
-- [ ] **FSSAI licence number:** shown in the footer.
+- [x] **FSSAI licence number:** removed from the footer at your request.
 - [x] **Prices:** Mushroom ₹60 / 200 g pack, ₹300 / kg · Baby Corn ₹60 / 200 g pack, ₹300 / kg · Paneer ₹100 / 200 g pack, ₹500 / kg.
 - [x] **Delivery towns:** Madhurandhagam, Chengalpattu, Thirukazhukuntram, Mahabalipuram, Kalpakkam, Anupuram, Melmaruvathur.
 - [ ] **Mushroom variety:** button, oyster, or both? The logo shows oyster; the placeholder photos show button.
