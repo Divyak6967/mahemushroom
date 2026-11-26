@@ -241,17 +241,25 @@
   });
 
   /* ---------- Process journey: full-screen slides that play by themselves ----------
-     The page scrolls past normally. The gold bar under the current step is the timer:
-     when its fill animation ends, the next step shows. It pauses while the section is
-     off screen, hovered or focused; step names can be tapped, and phones can swipe. */
+     The page scrolls past normally. The gold bar on the current step card is the timer:
+     when its fill animation ends, the next step shows. A status chip says whether it is
+     playing; play/pause and arrow buttons, step cards and swipes all steer it. It only
+     waits while off screen or when paused with the button. */
   const journey = $("[data-journey]");
   if (journey) {
     const steps = $$(".journey-step", journey);
     const scenes = $$(".journey-scene", journey);
     const stops = $$("[data-go]", journey);
+    const names = stops.map((b) => $(".journey-label > span", b).textContent);
+    const status = $("[data-journey-status]", journey);
+    const toggle = $("[data-journey-toggle]", journey);
     const n = steps.length;
     let current = 0;
+    let inView = false, userPaused = false;
 
+    const label = () => {
+      status.textContent = userPaused ? "Paused · press play to continue" : `Auto-playing · Next: ${names[(current + 1) % n]}`;
+    };
     const show = (i) => {
       current = (i + n) % n;
       [steps, scenes].forEach((group) =>
@@ -263,6 +271,13 @@
         if (k === current) b.setAttribute("aria-current", "step");
         else b.removeAttribute("aria-current");
       });
+      label();
+    };
+    const sync = () => {
+      journey.classList.toggle("is-paused", !inView || userPaused);
+      journey.classList.toggle("is-user-paused", userPaused);
+      toggle.setAttribute("aria-label", userPaused ? "Play the slideshow" : "Pause the slideshow");
+      label();
     };
     show(0);
 
@@ -272,15 +287,12 @@
         if (i === current) show(current + 1);
       });
     });
+    $("[data-journey-prev]", journey).addEventListener("click", () => show(current - 1));
+    $("[data-journey-next]", journey).addEventListener("click", () => show(current + 1));
+    toggle.addEventListener("click", () => { userPaused = !userPaused; sync(); });
 
     // play only while at least half the section is on screen
-    let inView = false, hovered = false, focused = false;
-    const sync = () => journey.classList.toggle("is-paused", !inView || hovered || focused);
     new IntersectionObserver(([e]) => { inView = e.isIntersecting; sync(); }, { threshold: 0.5 }).observe(journey);
-    journey.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") { hovered = true; sync(); } });
-    journey.addEventListener("pointerleave", () => { hovered = false; sync(); });
-    journey.addEventListener("focusin", () => { focused = true; sync(); });
-    journey.addEventListener("focusout", () => { focused = false; sync(); });
     sync();
 
     // swipe left / right on phones

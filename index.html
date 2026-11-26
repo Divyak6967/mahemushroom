@@ -37,6 +37,9 @@
       <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.5L12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/></symbol>
       <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5V20h16V9.5M3 9.5l1.6-5.2A1 1 0 0 1 5.6 3.5h12.8a1 1 0 0 1 1 .8L21 9.5M3 9.5a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0M9.5 20v-5h5v5"/></symbol>
       <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10.2 8.6l5 3.4-5 3.4z"/></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></symbol>
+      <symbol id="i-resume" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></symbol>
       <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
       <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.6 4-2.2 1.4a11 11 0 0 0 6.7 6.7l1.4-2.2 4 1.6V19a1.5 1.5 0 0 1-1.6 1.5A16 16 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></symbol>
       <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol>
@@ -339,13 +342,25 @@
             </li>
           </ol>
 
-          <!-- story-style progress: the current bar is the slide timer; tap a step to show it -->
-          <ol class="journey-progress" role="list" aria-label="Process steps">
-            <li><button type="button" data-go="0"><span class="journey-bar"><span></span></span><span class="journey-label"><b>01</b> Grow</span></button></li>
-            <li><button type="button" data-go="1"><span class="journey-bar"><span></span></span><span class="journey-label"><b>02</b> Harvest</span></button></li>
-            <li><button type="button" data-go="2"><span class="journey-bar"><span></span></span><span class="journey-label"><b>03</b> Clean &amp; Pack</span></button></li>
-            <li><button type="button" data-go="3"><span class="journey-bar"><span></span></span><span class="journey-label"><b>04</b> Deliver</span></button></li>
-          </ol>
+          <div class="journey-bottom">
+            <!-- says plainly that this is a slideshow, and lets people steer it -->
+            <div class="journey-controls">
+              <p class="journey-status"><span class="journey-dot" aria-hidden="true"></span><span data-journey-status>Auto-playing</span></p>
+              <div class="journey-buttons">
+                <button type="button" class="journey-btn" data-journey-prev aria-label="Previous step"><svg class="icon"><use href="#i-arrow-left"/></svg></button>
+                <button type="button" class="journey-btn journey-btn--toggle" data-journey-toggle aria-label="Pause the slideshow"><svg class="icon icon-pause"><use href="#i-pause"/></svg><svg class="icon icon-resume"><use href="#i-resume"/></svg></button>
+                <button type="button" class="journey-btn" data-journey-next aria-label="Next step"><svg class="icon"><use href="#i-arrow-right"/></svg></button>
+              </div>
+            </div>
+
+            <!-- step cards: the bar on the current card is the slide timer; tap a card to show it -->
+            <ol class="journey-progress" role="list" aria-label="Process steps">
+              <li><button type="button" data-go="0"><span class="journey-bar"><span></span></span><span class="journey-card"><img class="journey-thumb" src="assets/img/journey-grow.webp" alt="" width="1280" height="1024" loading="lazy" /><span class="journey-label"><b>01</b> <span>Grow</span></span></span></button></li>
+              <li><button type="button" data-go="1"><span class="journey-bar"><span></span></span><span class="journey-card"><img class="journey-thumb" src="assets/img/journey-harvest.webp" alt="" width="1280" height="1024" loading="lazy" /><span class="journey-label"><b>02</b> <span>Harvest</span></span></span></button></li>
+              <li><button type="button" data-go="2"><span class="journey-bar"><span></span></span><span class="journey-card"><img class="journey-thumb" src="assets/img/journey-pack.webp" alt="" width="1280" height="1024" loading="lazy" /><span class="journey-label"><b>03</b> <span>Clean &amp; Pack</span></span></span></button></li>
+              <li><button type="button" data-go="3"><span class="journey-bar"><span></span></span><span class="journey-card"><img class="journey-thumb" src="assets/img/journey-deliver.webp" alt="" width="1536" height="1024" loading="lazy" /><span class="journey-label"><b>04</b> <span>Deliver</span></span></span></button></li>
+            </ol>
+          </div>
         </div>
       </div>
     </section>
