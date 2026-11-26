@@ -240,51 +240,59 @@
     }
   });
 
-  /* ---------- Process journey: scroll progress drives the full-screen story ---------- */
+  /* ---------- Process journey: full-screen slides that play by themselves ----------
+     The page scrolls past normally. The gold bar under the current step is the timer:
+     when its fill animation ends, the next step shows. It pauses while the section is
+     off screen, hovered or focused; step names can be tapped, and phones can swipe. */
   const journey = $("[data-journey]");
   if (journey) {
     const steps = $$(".journey-step", journey);
     const scenes = $$(".journey-scene", journey);
     const stops = $$("[data-go]", journey);
-    const clamp = (v) => Math.min(1, Math.max(0, v));
     const n = steps.length;
-    let queued = false;
+    let current = 0;
 
-    const update = () => {
-      queued = false;
-      const r = journey.getBoundingClientRect();
-      const p = clamp(-r.top / (r.height - innerHeight));
-      const current = Math.min(n - 1, Math.floor(p * n));
-      const sp = p * n - current;
-      journey.style.setProperty("--sp", sp.toFixed(3));
+    const show = (i) => {
+      current = (i + n) % n;
       [steps, scenes].forEach((group) =>
-        group.forEach((el, i) => {
-          el.classList.toggle("is-active", i === current);
-          el.classList.toggle("is-past", i < current);
-        })
+        group.forEach((el, k) => el.classList.toggle("is-active", k === current))
       );
-      stops.forEach((b, i) => {
-        b.style.setProperty("--fill", i < current ? 1 : i === current ? sp.toFixed(3) : 0);
-        b.classList.toggle("is-current", i === current);
-        if (i === current) b.setAttribute("aria-current", "step");
+      stops.forEach((b, k) => {
+        b.classList.toggle("is-current", k === current);
+        b.classList.toggle("is-past", k < current);
+        if (k === current) b.setAttribute("aria-current", "step");
         else b.removeAttribute("aria-current");
       });
     };
-    const queue = () => {
-      if (!queued) { queued = true; requestAnimationFrame(update); }
-    };
-    addEventListener("scroll", queue, { passive: true });
-    addEventListener("resize", queue);
-    update();
+    show(0);
 
-    // clicking a progress bar scrolls to the start of that step
-    stops.forEach((b, i) =>
-      b.addEventListener("click", () => {
-        const r = journey.getBoundingClientRect();
-        const top = scrollY + r.top + (r.height - innerHeight) * ((i + 0.05) / n);
-        scrollTo({ top, behavior: "smooth" });
-      })
-    );
+    stops.forEach((b, i) => {
+      b.addEventListener("click", () => show(i));
+      $(".journey-bar > span", b).addEventListener("animationend", () => {
+        if (i === current) show(current + 1);
+      });
+    });
+
+    // play only while at least half the section is on screen
+    let inView = false, hovered = false, focused = false;
+    const sync = () => journey.classList.toggle("is-paused", !inView || hovered || focused);
+    new IntersectionObserver(([e]) => { inView = e.isIntersecting; sync(); }, { threshold: 0.5 }).observe(journey);
+    journey.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") { hovered = true; sync(); } });
+    journey.addEventListener("pointerleave", () => { hovered = false; sync(); });
+    journey.addEventListener("focusin", () => { focused = true; sync(); });
+    journey.addEventListener("focusout", () => { focused = false; sync(); });
+    sync();
+
+    // swipe left / right on phones
+    let x0 = null, y0 = 0;
+    journey.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+    journey.addEventListener("touchend", (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      const dy = e.changedTouches[0].clientY - y0;
+      x0 = null;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.3) show(current + (dx < 0 ? 1 : -1));
+    }, { passive: true });
   }
 
   /* ---------- WhatsApp order ----------

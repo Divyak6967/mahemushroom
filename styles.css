@@ -850,16 +850,15 @@ body.menu-open .site-header .brand-logo--color { opacity: 0; }
 .js [data-reveal].is-in { opacity: 1; transform: none; }
 
 /* =========================================================
-   Process journey (homepage) — full-screen, pinned
-   The section is tall; its stage sticks to the viewport while
-   scroll progress (set by main.js) drives the story:
-   --sp   = progress within the current step (0–1)
-   --fill = how full a progress bar is (0–1)
+   Process journey (homepage) — full-screen slides that play by themselves
+   The page scrolls normally. main.js marks the current step; the gold bar
+   under it fills over --slide and, when full, the next step shows.
+   .is-paused (off screen / hover / focus) freezes the bar.
    ========================================================= */
-.journey { position: relative; height: 340vh; background: var(--forest-950); }
-.journey-pin { position: sticky; top: 0; height: 100svh; overflow: hidden; color: var(--cream-50); isolation: isolate; }
+.journey { --slide: 5s; position: relative; background: var(--forest-950); }
+.journey-pin { position: relative; height: 100svh; min-height: 560px; max-height: 1000px; overflow: hidden; color: var(--cream-50); isolation: isolate; touch-action: pan-y; }
 
-/* photos crossfade softly; the active one eases into a slow zoom as you scroll */
+/* photos crossfade softly; the active one settles into a slow zoom while it shows */
 .journey-scenes, .journey-scene { position: absolute; inset: 0; margin: 0; }
 .journey-scenes { z-index: -2; }
 .journey-scene { opacity: 0; transition: opacity 1.4s var(--ease-soft); }
@@ -869,7 +868,7 @@ body.menu-open .site-header .brand-logo--color { opacity: 0; }
   scale: 1.1;
   transition: scale 1.6s var(--ease-out);
 }
-.journey-scene.is-active img { scale: calc(1.1 - var(--sp, 0) * 0.08); }
+.journey-scene.is-active img { scale: 1.02; transition: scale calc(var(--slide) + 1.5s) var(--ease-soft); }
 
 /* shade keeps the copy readable over any photo */
 .journey-shade {
@@ -908,7 +907,11 @@ body.menu-open .site-header .brand-logo--color { opacity: 0; }
 .journey-progress button { display: grid; gap: 0.7rem; width: 100%; padding-block: var(--s-2); text-align: left; color: rgba(246, 239, 224, 0.6); transition: color var(--t-fast); }
 .journey-progress button:hover { color: var(--cream-50); }
 .journey-bar { display: block; height: 3px; border-radius: 3px; background: rgba(246, 239, 224, 0.22); overflow: hidden; }
-.journey-bar > span { display: block; height: 100%; background: var(--gold-400); transform-origin: left; transform: scaleX(var(--fill, 0)); }
+.journey-bar > span { display: block; height: 100%; background: var(--gold-400); transform-origin: left; transform: scaleX(0); }
+.journey-progress .is-past .journey-bar > span { transform: scaleX(1); }
+.journey-progress .is-current .journey-bar > span { animation: journey-fill var(--slide) linear forwards; }
+.journey.is-paused .journey-bar > span { animation-play-state: paused; }
+@keyframes journey-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .journey-label { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .journey-label b { margin-right: 0.4em; font-weight: 600; color: var(--gold-400); }
 .journey-progress .is-current { color: var(--cream-50); }
