@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MaheMushroom — Farm Fresh Produce</title>
+  <meta name="description" content="MaheMushroom — locally grown mushrooms, tender baby corn and fresh paneer, packed with care and delivered to your kitchen." />
+  <meta name="theme-color" content="#16281a" />
+  <link rel="icon" href="assets/logo-mark.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,500..700,0..100;1,9..144,500..700,0..100&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/img/hero-banner.webp" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Icon sprite: 24px grid, 1.6 stroke, round caps -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+      <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4 20l1.2-3.7A8.2 8.2 0 1 1 8 19z"/><path d="M9.2 8.3c-.2 3.4 3 6.6 6.4 6.5l.9-1.4-1.9-1-1 .8c-1-.4-2.4-1.8-2.8-2.8l.8-1-1-1.9z"/></symbol>
+      <symbol id="i-mushroom" viewBox="0 0 24 24"><path d="M3.5 11.5C3.5 6.8 7.3 3.5 12 3.5s8.5 3.3 8.5 8z"/><path d="M9.5 11.5v6.5a2.5 2.5 0 0 0 5 0v-6.5"/></symbol>
+      <symbol id="i-corn" viewBox="0 0 24 24"><path d="M15.2 3.6c2.6.9 3.6 3.4 2.6 6.2l-3.4 8.4-5.6-5.6 3.2-7.6c.6-1.3 2-1.9 3.2-1.4z"/><path d="M8.8 12.6C6 13 4.3 15.2 4 18.5c3.3-.3 5.5-2 5.9-4.8M11.6 8.4l3.2 1.3M10.4 11.4l3.2 1.3"/></symbol>
+      <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></symbol>
+      <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4 2.5-6.5 7-6.5 0 4.5-2.5 7-7 6.5z"/><path d="M12 14.5c0-3-2-5-6-5 0 3.5 2 5.5 6 5z"/></symbol>
+      <symbol id="i-basket" viewBox="0 0 24 24"><path d="M3.5 10h17l-1.7 8.3a2 2 0 0 1-2 1.7H7.2a2 2 0 0 1-2-1.7z"/><path d="M8 10l2.2-5.5M16 10l-2.2-5.5M9 13.5v3M12 13.5v3M15 13.5v3"/></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 8L12 4l8.5 4v8.5L12 20.5l-8.5-4z"/><path d="M3.5 8l8.5 4 8.5-4M12 12v8.5M7.8 6l8.4 4"/></symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24"><path d="M5.2 16.5H3v-10h11v10H8.8M14 9.5h4l3 3v4h-1.7M14 16.5h1.7"/><circle cx="7" cy="16.8" r="1.8"/><circle cx="17.5" cy="16.8" r="1.8"/></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14z"/><path d="M5 19l8-8"/></symbol>
+      <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.4 15h9.2"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M5 21V4.5A1.5 1.5 0 0 1 6.5 3h7A1.5 1.5 0 0 1 15 4.5V21M15 9h3.5A1.5 1.5 0 0 1 20 10.5V21M3 21h18M8.5 7h3M8.5 11h3M8.5 15h3"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.5L12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/></symbol>
+      <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5V20h16V9.5M3 9.5l1.6-5.2A1 1 0 0 1 5.6 3.5h12.8a1 1 0 0 1 1 .8L21 9.5M3 9.5a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0M9.5 20v-5h5v5"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10.2 8.6l5 3.4-5 3.4z"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.6 4-2.2 1.4a11 11 0 0 0 6.7 6.7l1.4-2.2 4 1.6V19a1.5 1.5 0 0 1-1.6 1.5A16 16 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ Header ============ -->
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="MaheMushroom — home">
+        <img class="brand-logo brand-logo--light" src="assets/logo-light-mark.webp" alt="" width="1387" height="512" />
+        <img class="brand-logo brand-logo--color" src="assets/logo-mark.webp" alt="" width="1387" height="512" />
+      </a>
+
+      <nav class="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="#top" data-spy="top" aria-current="true">Home</a></li>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li class="has-menu">
+            <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="products-menu" data-spy="products">
+              Products <svg class="icon icon--sm"><use href="#i-chevron-down"/></svg>
+            </button>
+            <ul class="nav-dropdown" id="products-menu" hidden>
+              <li><a href="#product-mushroom" data-jump-card>Mushroom</a></li>
+              <li><a href="#product-babycorn" data-jump-card>Baby Corn</a></li>
+              <li><a href="#product-paneer" data-jump-card>Paneer</a></li>
+            </ul>
+          </li>
+          <li><a href="#process" data-spy="process">Process</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="#contact" data-spy="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn btn--gold btn--sm header-order" data-order>
+          <svg class="icon"><use href="#i-basket"/></svg><span>Order Fresh Produce</span>
+        </button>
+        <button type="button" class="icon-btn menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle>
+          <svg class="icon"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+    <nav aria-label="Mobile">
+      <ol>
+        <li><a href="#top">Home</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+    <button type="button" class="btn btn--gold btn--block" data-order>
+      <svg class="icon"><use href="#i-whatsapp"/></svg><span>Order on WhatsApp</span>
+    </button>
+  </div>
+
+  <main id="main">
+    <!-- ============ 01 · Hero ============ -->
+    <section class="hero" id="top" data-hero data-spy-section="top" aria-labelledby="hero-title">
+      <!-- full-width scene: produce on the right, warm green bokeh behind the copy -->
+      <div class="hero-media">
+        <img src="assets/img/hero-banner.webp" alt="Fresh mushrooms in a basket with baby corn and paneer on a farm table" width="2400" height="1350" fetchpriority="high" />
+        <span class="hero-sunbeam" aria-hidden="true"></span>
+        <div class="hero-spores" aria-hidden="true" data-spores></div>
+      </div>
+
+      <!-- two leaves from the logo drift in front of the scene (--depth drives mouse parallax) -->
+      <div class="hero-leaves" aria-hidden="true" data-leaf-fall>
+        <span class="leaf leaf--a" style="--depth:28"><img src="assets/leaf.webp" alt="" width="181" height="145" /></span>
+        <span class="leaf leaf--b" style="--depth:16"><img src="assets/leaf.webp" alt="" width="181" height="145" /></span>
+        <span class="leaf leaf--corner-tl" style="--depth:34"><img src="assets/leaf.webp" alt="" width="181" height="145" /></span>
+        <span class="leaf leaf--corner-bl" style="--depth:40"><img src="assets/leaf.webp" alt="" width="181" height="145" /></span>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-eyebrow hero-rise" style="--d:0">Farm<i aria-hidden="true">•</i>Fresh<i aria-hidden="true">•</i>Local</p>
+          <!-- each word drops in with a springy bounce; the h1 keeps one readable label -->
+          <h1 id="hero-title" class="hero-title" aria-label="Freshness from our farm to your kitchen">
+            <span aria-hidden="true"><span class="word" style="--w:0">Freshness</span> <span class="word" style="--w:1">From</span></span>
+            <span aria-hidden="true"><span class="word" style="--w:2">Our</span> <span class="word" style="--w:3">Farm</span> <span class="word" style="--w:4">to</span></span>
+            <span class="hero-title-accent" aria-hidden="true">
+              <em><span class="word" style="--w:5">Your</span> <span class="word" style="--w:6">Kitchen</span></em>
+              <svg class="swash" viewBox="0 0 400 22" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M4 15C90 6 230 3 396 9"/>
+              </svg>
+            </span>
+          </h1>
+          <p class="hero-lede hero-rise" style="--d:9">
+            Locally grown mushrooms, fresh baby corn, and paneer, carefully sourced, packed,
+            and delivered locally to your doorstep.
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn--gold btn--lg btn--nudge drop" style="--dd:1.15s" data-order>
+              <svg class="icon"><use href="#i-basket"/></svg><span>Order Fresh Produce</span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg>
+            </button>
+            <a class="btn btn--ghost btn--lg drop" style="--dd:1.3s" href="our-story.html">
+              <svg class="icon"><use href="#i-play"/></svg><span>Our Story</span>
+            </a>
+          </div>
+          <ul class="hero-trust" role="list">
+            <li class="hero-rise" style="--d:12"><span class="trust-icon"><svg class="icon"><use href="#i-leaf"/></svg></span>Locally Grown</li>
+            <li class="hero-rise" style="--d:13"><span class="trust-icon"><svg class="icon"><use href="#i-flask"/></svg></span>Chemical Free</li>
+            <li class="hero-rise" style="--d:14"><span class="trust-icon"><svg class="icon"><use href="#i-box"/></svg></span>Hygienic Packing</li>
+            <li class="hero-rise" style="--d:15"><span class="trust-icon"><svg class="icon"><use href="#i-truck"/></svg></span>Local Delivery</li>
+          </ul>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#story"><span>Scroll to Explore</span><svg class="icon"><use href="#i-chevron-down"/></svg></a>
+
+      <svg class="wave wave--hero" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 64C180 22 380 6 640 34s520 70 800 8V110H0z"/>
+      </svg>
+    </section>
+
+    <!-- ============ 02 · Our Story ============ -->
+    <section class="story section" id="story" data-spy-section="story" aria-labelledby="story-title">
+      <div class="container story-grid">
+        <!-- copy arrives in sequence: eyebrow, heading lines (masked slide-up), text, brush draws, button -->
+        <div class="story-copy">
+          <p class="eyebrow" data-reveal style="--d:0">Our Story</p>
+          <h2 id="story-title" class="display-2 mask-lines" data-reveal>
+            <span class="mask-line"><span>A Local Farm</span></span>
+            <span class="mask-line"><span>with a Simple Purpose</span></span>
+          </h2>
+          <p class="body-lg" data-reveal style="--d:3">
+            At MaheMushroom, we grow, source and pack wholesome food that brings natural goodness
+            to your everyday meals.
+          </p>
+          <p class="story-founder" data-reveal style="--d:4">Named after our founder, Mahe.</p>
+          <svg class="brush" data-reveal viewBox="0 0 90 18" aria-hidden="true"><path d="M3 12C25 6 55 4 87 5"/><path d="M14 15C38 11 60 10 80 11"/></svg>
+          <a class="btn btn--outline" href="our-story.html" data-reveal style="--d:6">
+            <span>Know Our Story</span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+
+        <!-- photo wipes open, then drifts with scroll; badge pops in and turns; a leaf peeks over the edge -->
+        <div class="story-visual" data-reveal>
+          <figure class="story-media">
+            <img src="assets/img/story-growroom.webp" alt="Rows of mushroom grow bags on shelves inside the grow room" width="1000" height="1250" loading="lazy" data-parallax="0.08" />
+          </figure>
+          <span class="peek-leaf" aria-hidden="true"><img src="assets/leaf.webp" alt="" width="181" height="145" /></span>
+          <div class="story-badge" aria-hidden="true">
+            <svg class="story-badge-ring" viewBox="0 0 120 120">
+              <defs><path id="badge-circle" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
+              <text><textPath href="#badge-circle" textLength="272" lengthAdjust="spacing">FARM FRESH PRODUCE • LOCAL FARM •</textPath></text>
+            </svg>
+            <span class="story-badge-icon"><svg class="icon icon--md"><use href="#i-mushroom"/></svg></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 · Products ============ -->
+    <section class="products section" id="products" data-spy-section="products" aria-labelledby="products-title">
+      <svg class="wave wave--products" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 90V40C260 70 520 78 760 50S1200 2 1440 26V90z"/>
+      </svg>
+      <div class="container">
+        <div class="products-head" data-reveal>
+          <div>
+            <p class="eyebrow eyebrow--light">Our Products</p>
+            <h2 id="products-title" class="display-2 display-2--light">Naturally Grown.<br /><em>Locally Delivered.</em></h2>
+          </div>
+          <p class="products-intro">Fresh, versatile and packed with nutrition — explore our farm-fresh products.</p>
+        </div>
+
+        <!-- product showcase: tabs switch the stage photo and details; auto-advances until the visitor picks one -->
+        <div class="showcase is-auto" data-showcase data-reveal>
+          <div class="showcase-stage" aria-hidden="true">
+            <div class="stage-arch">
+              <img class="stage-img is-active" data-stage="mushroom" src="assets/img/product-mushroom.webp" alt="" width="900" height="720" loading="lazy" />
+              <img class="stage-img" data-stage="babycorn" src="assets/img/product-babycorn.webp" alt="" width="900" height="720" loading="lazy" />
+              <img class="stage-img" data-stage="paneer" src="assets/img/product-paneer.webp" alt="" width="900" height="720" loading="lazy" />
+            </div>
+            <span class="stage-leaf"><img src="assets/leaf.webp" alt="" width="181" height="145" /></span>
+          </div>
+          <div class="showcase-info">
+            <div class="showcase-tabs" role="tablist" aria-label="Our products">
+              <button type="button" role="tab" id="tab-mushroom" data-tab="mushroom" aria-controls="product-mushroom" aria-selected="true" tabindex="0">
+                <img src="assets/img/product-mushroom.webp" alt="" width="900" height="720" loading="lazy" /><span>Mushroom</span><i class="tab-progress" aria-hidden="true"></i>
+              </button>
+              <button type="button" role="tab" id="tab-babycorn" data-tab="babycorn" aria-controls="product-babycorn" aria-selected="false" tabindex="-1">
+                <img src="assets/img/product-babycorn.webp" alt="" width="900" height="720" loading="lazy" /><span>Baby Corn</span><i class="tab-progress" aria-hidden="true"></i>
+              </button>
+              <button type="button" role="tab" id="tab-paneer" data-tab="paneer" aria-controls="product-paneer" aria-selected="false" tabindex="-1">
+                <img src="assets/img/product-paneer.webp" alt="" width="900" height="720" loading="lazy" /><span>Paneer</span><i class="tab-progress" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="showcase-panels">
+              <article class="showcase-panel is-active" role="tabpanel" id="product-mushroom" aria-labelledby="tab-mushroom">
+                <h3 class="panel-title">Mushroom</h3>
+                <ul class="panel-packs" role="list"><li><span>200 g pack</span><b>₹60</b></li><li><span>1 kg</span><b>₹300</b></li></ul>
+                <p class="panel-lede">Fresh, meaty and nutrient-rich. A perfect addition to everyday meals. Harvested at the right time and packed fresh for your kitchen.</p>
+                <div class="panel-block">
+                  <p class="panel-label">Great for</p>
+                  <ul class="panel-uses" role="list"><li>Curries</li><li>Stir-fries</li><li>Soups</li><li>Biryani</li></ul>
+                </div>
+                <div class="panel-block">
+                  <p class="panel-label">Try it in <span>· sample recipes</span></p>
+                  <ul class="panel-recipes" role="list">
+                    <li><a href="recipe.html?r=mushroom-pepper-stir-fry"><img src="assets/img/recipe-stirfry.webp" alt="" width="1200" height="960" loading="lazy" /><span><b>Mushroom Pepper Stir-Fry</b><small>15 min</small></span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a></li>
+                    <li><a href="recipe.html?r=mushroom-paneer-masala"><img src="assets/img/recipe-masala.webp" alt="" width="1200" height="960" loading="lazy" /><span><b>Mushroom Paneer Masala</b><small>30 min</small></span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a></li>
+                  </ul>
+                </div>
+                <div class="panel-actions">
+                  <button type="button" class="btn btn--gold" data-order="Mushroom"><svg class="icon"><use href="#i-whatsapp"/></svg><span>Order Mushroom</span></button>
+                  <a class="text-arrow" href="recipes.html"><span>All recipes</span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a>
+                </div>
+              </article>
+              <article class="showcase-panel" role="tabpanel" id="product-babycorn" aria-labelledby="tab-babycorn" hidden>
+                <h3 class="panel-title">Baby Corn</h3>
+                <ul class="panel-packs" role="list"><li><span>200 g pack</span><b>₹60</b></li><li><span>1 kg</span><b>₹300</b></li></ul>
+                <p class="panel-lede">Tender, crunchy and naturally sweet. Great for a variety of dishes. Harvested at the right time and packed fresh for your kitchen.</p>
+                <div class="panel-block">
+                  <p class="panel-label">Great for</p>
+                  <ul class="panel-uses" role="list"><li>Stir-fries</li><li>Masala</li><li>Starters</li><li>Soups</li></ul>
+                </div>
+                <div class="panel-block">
+                  <p class="panel-label">Try it in <span>· sample recipes</span></p>
+                  <ul class="panel-recipes" role="list">
+                    <li><a href="recipe.html?r=farm-trio-pepper-fry"><img src="assets/img/recipe-trio.webp" alt="" width="1200" height="960" loading="lazy" /><span><b>Farm Trio Pepper Fry</b><small>20 min</small></span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a></li>
+                    <li><a href="recipe.html?r=baby-corn-masala"><img src="assets/img/product-babycorn.webp" alt="" width="1200" height="960" loading="lazy" /><span><b>Baby Corn Masala</b><small>25 min</small></span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a></li>
+                  </ul>
+                </div>
+                <div class="panel-actions">
+                  <button type="button" class="btn btn--gold" data-order="Baby Corn"><svg class="icon"><use href="#i-whatsapp"/></svg><span>Order Baby Corn</span></button>
+                  <a class="text-arrow" href="recipes.html"><span>All recipes</span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a>
+                </div>
+              </article>
+              <article class="showcase-panel" role="tabpanel" id="product-paneer" aria-labelledby="tab-paneer" hidden>
+                <h3 class="panel-title">Paneer</h3>
+                <ul class="panel-packs" role="list"><li><span>200 g pack</span><b>₹100</b></li><li><span>1 kg</span><b>₹500</b></li></ul>
+                <p class="panel-lede">Fresh, soft and protein-rich. A wholesome choice for your family. Harvested at the right time and packed fresh for your kitchen.</p>
+                <div class="panel-block">
+                  <p class="panel-label">Great for</p>
+                  <ul class="panel-uses" role="list"><li>Curries</li><li>Tikka</li><li>Stir-fries</li><li>Wraps</li></ul>
+                </div>
+                <div class="panel-block">
+                  <p class="panel-label">Try it in <span>· sample recipes</span></p>
+                  <ul class="panel-recipes" role="list">
+                    <li><a href="recipe.html?r=mushroom-paneer-masala"><img src="assets/img/recipe-masala.webp" alt="" width="1200" height="960" loading="lazy" /><span><b>Mushroom Paneer Masala</b><small>30 min</small></span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a></li>
+                    <li><a href="recipe.html?r=pan-paneer-tikka"><img src="assets/img/product-paneer.webp" alt="" width="1200" height="960" loading="lazy" /><span><b>Pan Paneer Tikka</b><small>25 min</small></span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a></li>
+                  </ul>
+                </div>
+                <div class="panel-actions">
+                  <button type="button" class="btn btn--gold" data-order="Paneer"><svg class="icon"><use href="#i-whatsapp"/></svg><span>Order Paneer</span></button>
+                  <a class="text-arrow" href="recipes.html"><span>All recipes</span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 · Process: full-screen pinned journey, driven by scroll ============ -->
+    <section class="journey" id="process" data-spy-section="process" data-journey aria-labelledby="process-title">
+      <div class="journey-pin">
+        <!-- full-bleed photos: each new step slides up over the last and zooms slowly -->
+        <div class="journey-scenes" aria-hidden="true">
+          <figure class="journey-scene"><img src="assets/img/journey-grow.webp" alt="" width="1280" height="1024" decoding="async" /></figure>
+          <figure class="journey-scene"><img src="assets/img/journey-harvest.webp" alt="" width="1280" height="1024" decoding="async" /></figure>
+          <figure class="journey-scene"><img src="assets/img/journey-pack.webp" alt="" width="1280" height="1024" decoding="async" /></figure>
+          <figure class="journey-scene"><img src="assets/img/journey-deliver.webp" alt="" width="1536" height="1024" decoding="async" /></figure>
+        </div>
+        <div class="journey-shade" aria-hidden="true"></div>
+
+        <div class="container journey-ui">
+          <header class="journey-head">
+            <p class="eyebrow eyebrow--light">Our Process</p>
+            <h2 id="process-title" class="journey-title">From Farm <em>to Fresh</em></h2>
+          </header>
+
+          <ol class="journey-steps" role="list">
+            <li class="journey-step">
+              <h3 class="journey-step-title">Grow<br /><span>Naturally</span></h3>
+              <p>Our mushrooms grow in a clean grow room, looked after with care every single day.</p>
+            </li>
+            <li class="journey-step">
+              <h3 class="journey-step-title">Harvest at<br /><span>the Right Time</span></h3>
+              <p>Each batch is picked when it's at its best — not too early, not too late.</p>
+            </li>
+            <li class="journey-step">
+              <h3 class="journey-step-title">Clean &amp; Pack<br /><span>Hygienically</span></h3>
+              <p>Produce is cleaned, checked and packed hygienically, ready for your kitchen.</p>
+            </li>
+            <li class="journey-step">
+              <h3 class="journey-step-title">Delivered<br /><span>Fresh to You</span></h3>
+              <p>We deliver locally, so the journey from our farm to your door stays short.</p>
+            </li>
+          </ol>
+
+          <!-- story-style progress: the current bar fills as you scroll; click to jump -->
+          <ol class="journey-progress" role="list" aria-label="Process steps">
+            <li><button type="button" data-go="0"><span class="journey-bar"><span></span></span><span class="journey-label"><b>01</b> Grow</span></button></li>
+            <li><button type="button" data-go="1"><span class="journey-bar"><span></span></span><span class="journey-label"><b>02</b> Harvest</span></button></li>
+            <li><button type="button" data-go="2"><span class="journey-bar"><span></span></span><span class="journey-label"><b>03</b> Clean &amp; Pack</span></button></li>
+            <li><button type="button" data-go="3"><span class="journey-bar"><span></span></span><span class="journey-label"><b>04</b> Deliver</span></button></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04b · Where we deliver ============ -->
+    <section class="delivery section" id="delivery" aria-labelledby="delivery-title">
+      <div class="container delivery-grid">
+        <div class="delivery-copy">
+          <p class="eyebrow" data-reveal>Where We Deliver</p>
+          <h2 id="delivery-title" class="display-2 mask-lines" data-reveal>
+            <span class="mask-line"><span>Fresh to Your Door,</span></span>
+            <span class="mask-line"><span><em>Around Madhurandhagam</em></span></span>
+          </h2>
+          <p class="body-lg" data-reveal style="--d:2">We deliver to these seven towns only. Choose yours when you order on WhatsApp and we'll bring it fresh from our shop.</p>
+          <ul class="town-list" role="list" data-reveal style="--d:3">
+            <li class="is-shop" style="--i:0"><svg class="icon icon--sm"><use href="#i-pin"/></svg>Madhurandhagam</li>
+            <li style="--i:1;--arrive:2.52s"><svg class="icon icon--sm"><use href="#i-pin"/></svg>Chengalpattu</li>
+            <li style="--i:2;--arrive:3.92s"><svg class="icon icon--sm"><use href="#i-pin"/></svg>Thirukazhukuntram</li>
+            <li style="--i:3;--arrive:5.32s"><svg class="icon icon--sm"><use href="#i-pin"/></svg>Mahabalipuram</li>
+            <li style="--i:4;--arrive:6.72s"><svg class="icon icon--sm"><use href="#i-pin"/></svg>Kalpakkam</li>
+            <li style="--i:5;--arrive:8.12s"><svg class="icon icon--sm"><use href="#i-pin"/></svg>Anupuram</li>
+            <li style="--i:6;--arrive:9.52s"><svg class="icon icon--sm"><use href="#i-pin"/></svg>Melmaruvathur</li>
+          </ul>
+          <div class="shop-card" data-reveal style="--d:4">
+            <span class="shop-card-icon"><svg class="icon icon--md"><use href="#i-store"/></svg></span>
+            <div>
+              <p class="shop-card-label">Our shop</p>
+              <address>No. 2, Perumal Koil Street,<br />Keezhavalam, Madhurandhagam – 603 306</address>
+              <a class="text-arrow text-arrow--dark" href="https://www.google.com/maps/search/?api=1&query=No%202%20Perumal%20Koil%20Street%2C%20Keezhavalam%2C%20Madhurandhagam%20603306" target="_blank" rel="noopener"><span>Get directions</span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- illustrated map: routes draw out from the shop to each town, pins pop in -->
+        <figure class="delivery-map" data-reveal>
+          <svg viewBox="0 0 600 440" role="img" aria-labelledby="map-title">
+            <title id="map-title">Map of our delivery towns around the shop in Madhurandhagam</title>
+            <path class="sea" d="M560 0C548 70 572 120 556 190S530 300 548 360 536 420 540 440H600V0z"/>
+            <text class="sea-label" x="584" y="250" transform="rotate(90 584 250)">Bay of Bengal</text>
+          <path class="route" id="route-0" style="--i:0" d="M168 294Q252 211 276 96"/>
+          <path class="route" id="route-1" style="--i:1" d="M168 294Q286 269 372 184"/>
+          <path class="route" id="route-2" style="--i:2" d="M168 294Q359 266 528 173"/>
+          <path class="route" id="route-3" style="--i:3" d="M168 294Q331 322 492 283"/>
+          <path class="route" id="route-4" style="--i:4" d="M168 294Q305 333 444 305"/>
+          <path class="route" id="route-5" style="--i:5" d="M168 294Q106 316 96 382"/>
+            <!-- arrival ripples + vans: van i leaves the shop every 1.4s and drives for 2.52s -->
+            <circle class="arrive-ripple" cx="276" cy="96" r="7"><animate attributeName="r" values="7;26;26" keyTimes="0;0.14;1" dur="8.4s" begin="2.52s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.14;1" dur="8.4s" begin="2.52s" repeatCount="indefinite"/></circle>
+            <circle class="arrive-ripple" cx="372" cy="184" r="7"><animate attributeName="r" values="7;26;26" keyTimes="0;0.14;1" dur="8.4s" begin="3.92s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.14;1" dur="8.4s" begin="3.92s" repeatCount="indefinite"/></circle>
+            <circle class="arrive-ripple" cx="528" cy="173" r="7"><animate attributeName="r" values="7;26;26" keyTimes="0;0.14;1" dur="8.4s" begin="5.32s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.14;1" dur="8.4s" begin="5.32s" repeatCount="indefinite"/></circle>
+            <circle class="arrive-ripple" cx="492" cy="283" r="7"><animate attributeName="r" values="7;26;26" keyTimes="0;0.14;1" dur="8.4s" begin="6.72s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.14;1" dur="8.4s" begin="6.72s" repeatCount="indefinite"/></circle>
+            <circle class="arrive-ripple" cx="444" cy="305" r="7"><animate attributeName="r" values="7;26;26" keyTimes="0;0.14;1" dur="8.4s" begin="8.12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.14;1" dur="8.4s" begin="8.12s" repeatCount="indefinite"/></circle>
+            <circle class="arrive-ripple" cx="96" cy="382" r="7"><animate attributeName="r" values="7;26;26" keyTimes="0;0.14;1" dur="8.4s" begin="9.52s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.14;1" dur="8.4s" begin="9.52s" repeatCount="indefinite"/></circle>
+          <g class="town" style="--i:0"><circle cx="276" cy="96" r="7"/><text x="288" y="100" text-anchor="start">Chengalpattu</text></g>
+          <g class="town" style="--i:1"><circle cx="372" cy="184" r="7"/><text x="360" y="174" text-anchor="end">Thirukazhukuntram</text></g>
+          <g class="town" style="--i:2"><circle cx="528" cy="173" r="7"/><text x="522" y="157" text-anchor="middle">Mahabalipuram</text></g>
+          <g class="town" style="--i:3"><circle cx="492" cy="283" r="7"/><text x="492" y="267" text-anchor="middle">Kalpakkam</text></g>
+          <g class="town" style="--i:4"><circle cx="444" cy="305" r="7"/><text x="444" y="331" text-anchor="middle">Anupuram</text></g>
+          <g class="town" style="--i:5"><circle cx="96" cy="382" r="7"/><text x="110" y="387" text-anchor="start">Melmaruvathur</text></g>
+            <g class="van" opacity="0"><circle r="15"/><g transform="scale(1.35)"><path d="M-6.5 -3h7v6h-7zM0.5 -1h3l2.5 2.5V3h-5.5z"/><circle class="wheel" cx="-4" cy="4" r="1.6"/><circle class="wheel" cx="3.5" cy="4" r="1.6"/></g>
+              <animateMotion dur="8.4s" begin="0.00s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.3;1"><mpath href="#route-0"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.3;0.34;1" dur="8.4s" begin="0.00s" repeatCount="indefinite"/>
+            </g>
+            <g class="van" opacity="0"><circle r="15"/><g transform="scale(1.35)"><path d="M-6.5 -3h7v6h-7zM0.5 -1h3l2.5 2.5V3h-5.5z"/><circle class="wheel" cx="-4" cy="4" r="1.6"/><circle class="wheel" cx="3.5" cy="4" r="1.6"/></g>
+              <animateMotion dur="8.4s" begin="1.40s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.3;1"><mpath href="#route-1"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.3;0.34;1" dur="8.4s" begin="1.40s" repeatCount="indefinite"/>
+            </g>
+            <g class="van" opacity="0"><circle r="15"/><g transform="scale(1.35)"><path d="M-6.5 -3h7v6h-7zM0.5 -1h3l2.5 2.5V3h-5.5z"/><circle class="wheel" cx="-4" cy="4" r="1.6"/><circle class="wheel" cx="3.5" cy="4" r="1.6"/></g>
+              <animateMotion dur="8.4s" begin="2.80s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.3;1"><mpath href="#route-2"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.3;0.34;1" dur="8.4s" begin="2.80s" repeatCount="indefinite"/>
+            </g>
+            <g class="van" opacity="0"><circle r="15"/><g transform="scale(1.35)"><path d="M-6.5 -3h7v6h-7zM0.5 -1h3l2.5 2.5V3h-5.5z"/><circle class="wheel" cx="-4" cy="4" r="1.6"/><circle class="wheel" cx="3.5" cy="4" r="1.6"/></g>
+              <animateMotion dur="8.4s" begin="4.20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.3;1"><mpath href="#route-3"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.3;0.34;1" dur="8.4s" begin="4.20s" repeatCount="indefinite"/>
+            </g>
+            <g class="van" opacity="0"><circle r="15"/><g transform="scale(1.35)"><path d="M-6.5 -3h7v6h-7zM0.5 -1h3l2.5 2.5V3h-5.5z"/><circle class="wheel" cx="-4" cy="4" r="1.6"/><circle class="wheel" cx="3.5" cy="4" r="1.6"/></g>
+              <animateMotion dur="8.4s" begin="5.60s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.3;1"><mpath href="#route-4"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.3;0.34;1" dur="8.4s" begin="5.60s" repeatCount="indefinite"/>
+            </g>
+            <g class="van" opacity="0"><circle r="15"/><g transform="scale(1.35)"><path d="M-6.5 -3h7v6h-7zM0.5 -1h3l2.5 2.5V3h-5.5z"/><circle class="wheel" cx="-4" cy="4" r="1.6"/><circle class="wheel" cx="3.5" cy="4" r="1.6"/></g>
+              <animateMotion dur="8.4s" begin="7.00s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.3;1"><mpath href="#route-5"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.3;0.34;1" dur="8.4s" begin="7.00s" repeatCount="indefinite"/>
+            </g>
+            <g class="shop-pin" transform="translate(168 294)">
+              <circle class="shop-pulse" r="22"/>
+              <path d="M0 0C-9-13-16-21-16-30a16 16 0 1 1 32 0C16-21 9-13 0 0z"/>
+              <circle class="shop-dot" cy="-30" r="6"/>
+              <text y="26" text-anchor="middle">Madhurandhagam</text>
+              <text class="shop-sub" y="42" text-anchor="middle">Our shop · Keezhavalam</text>
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 05 · Order band + promise ribbon ============ -->
+    <section class="order-band" aria-labelledby="cta-title">
+      <svg class="wave wave--band" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 90V40C260 70 520 78 760 50S1200 2 1440 26V90z"/>
+      </svg>
+      <div class="container order-band-grid">
+        <div class="order-band-copy" data-reveal>
+          <p class="eyebrow eyebrow--light">Order on WhatsApp</p>
+          <h2 id="cta-title" class="display-2 display-2--light">Bring Home<br /><em>Farm-Fresh Goodness</em></h2>
+          <p class="order-band-text">Order mushrooms, baby corn and paneer on WhatsApp and get them delivered fresh to your doorstep.</p>
+          <p class="order-band-area"><svg class="icon icon--sm"><use href="#i-pin"/></svg>Delivering to 7 towns around Madhurandhagam · <a href="#delivery">See areas</a></p>
+          <div class="order-band-actions">
+            <button type="button" class="btn btn--gold" data-order>
+              <svg class="icon"><use href="#i-whatsapp"/></svg><span>Order on WhatsApp</span>
+            </button>
+            <a class="text-arrow" href="recipes.html"><span>Explore recipes</span><svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </div>
+        <!-- the dish floats on a warm glow with steam rising; a handwritten note points to it -->
+        <div class="order-band-dish" data-reveal>
+          <div class="dish-glow" aria-hidden="true"></div>
+          <img class="dish-img" src="assets/img/cta-pan.webp" alt="A pan of sautéed mushrooms, baby corn and paneer" width="1100" height="880" loading="lazy" />
+          <span class="steam" aria-hidden="true"></span><span class="steam" aria-hidden="true"></span><span class="steam" aria-hidden="true"></span>
+        </div>
+      </div>
+      <!-- our promise on two crossing tapes that scroll in opposite directions (each list repeats for a seamless loop) -->
+      <div class="ribbon" aria-label="Our promise">
+        <div class="tape tape--back" aria-hidden="true">
+          <div class="tape-track tape-track--reverse">
+            <ul aria-hidden="true">
+              <li>Fresh from our farm</li>
+              <li>Order on WhatsApp</li>
+              <li>Delivering around Madhurandhagam</li>
+              <li>MaheMushroom</li>
+            </ul>
+            <ul aria-hidden="true">
+              <li>Fresh from our farm</li>
+              <li>Order on WhatsApp</li>
+              <li>Delivering around Madhurandhagam</li>
+              <li>MaheMushroom</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tape tape--front">
+          <div class="tape-track">
+            <ul role="list">
+              <li><svg class="icon icon--md"><use href="#i-leaf"/></svg>Locally Grown</li>
+              <li><svg class="icon icon--md"><use href="#i-flask"/></svg>Chemical Free</li>
+              <li><svg class="icon icon--md"><use href="#i-shield"/></svg>Hygienically Packed</li>
+              <li><svg class="icon icon--md"><use href="#i-truck"/></svg>Local Delivery</li>
+            </ul>
+            <ul aria-hidden="true">
+              <li><svg class="icon icon--md"><use href="#i-leaf"/></svg>Locally Grown</li>
+              <li><svg class="icon icon--md"><use href="#i-flask"/></svg>Chemical Free</li>
+              <li><svg class="icon icon--md"><use href="#i-shield"/></svg>Hygienically Packed</li>
+              <li><svg class="icon icon--md"><use href="#i-truck"/></svg>Local Delivery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer / Contact ============ -->
+  <footer class="site-footer" id="contact" data-spy-section="contact">
+    <div class="container footer-top">
+      <div class="footer-brand" data-reveal>
+        <img src="assets/logo-light.webp" alt="MaheMushroom — Farm Fresh Produce" width="1387" height="579" loading="lazy" />
+        <p class="footer-statement">Grown with care.<br /><em>Delivered fresh.</em></p>
+        <p class="footer-blurb">Named after our founder, Mahe. Mushrooms, baby corn and paneer — carefully packed and delivered locally.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col" data-reveal style="--d:1">
+          <h2 class="footer-title">Order</h2>
+          <ul role="list">
+            <li><a class="footer-wa" href="https://wa.me/918124834607" target="_blank" rel="noopener"><svg class="icon"><use href="#i-whatsapp"/></svg>+91 81248 34607</a></li>
+            <li class="footer-muted"><svg class="icon icon--sm"><use href="#i-phone"/></svg>Phone <span class="placeholder" title="Placeholder — phone number not provided yet">to be added</span></li>
+          </ul>
+        </div>
+        <div class="footer-col" data-reveal style="--d:2">
+          <h2 class="footer-title">Visit</h2>
+          <ul role="list">
+            <li class="footer-muted"><svg class="icon icon--sm"><use href="#i-pin"/></svg><span>No. 2, Perumal Koil Street, Keezhavalam, Madhurandhagam – 603 306</span></li>
+            <li><a class="footer-directions" href="https://www.google.com/maps/search/?api=1&query=No%202%20Perumal%20Koil%20Street%2C%20Keezhavalam%2C%20Madhurandhagam%20603306" target="_blank" rel="noopener">Get directions <svg class="icon icon--sm"><use href="#i-arrow-right"/></svg></a></li>
+          </ul>
+        </div>
+        <div class="footer-col" data-reveal style="--d:3">
+          <h2 class="footer-title">Explore</h2>
+          <ul role="list" class="footer-links">
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- closing flourish: the full brand name rises letter by letter -->
+    <div class="container footer-wordmark" aria-hidden="true" data-reveal>
+      <p><span style="--i:0">M</span><span style="--i:1">a</span><span style="--i:2">h</span><span style="--i:3">e</span><span style="--i:4">M</span><span style="--i:5">u</span><span style="--i:6">s</span><span style="--i:7">h</span><span style="--i:8">r</span><span style="--i:9">o</span><span style="--i:10">o</span><span style="--i:11">m</span></p>
+    </div>
+
+    <div class="container footer-base">
+      <p>© 2026 MaheMushroom<sup>®</sup> · FSSAI Lic. No. <span class="placeholder" title="Placeholder — licence number not provided yet">to be added</span></p>
+      <button type="button" class="to-top" data-to-top><span>Back to top</span><span class="to-top-dot"><svg class="icon icon--sm"><use href="#i-arrow-up"/></svg></span></button>
+    </div>
+
+  </footer>
+
+  <!-- ============ Prototype-only UI ============ -->
+  <aside class="proto-badge" data-proto-badge>
+    <strong>Design prototype</strong>
+    <span>Photos and some contact details are placeholders.</span>
+    <button type="button" class="icon-btn" aria-label="Hide prototype note" data-proto-close><svg class="icon icon--sm"><use href="#i-close"/></svg></button>
+  </aside>
+
+  <dialog class="order-dialog" data-order-dialog aria-labelledby="order-title">
+    <form method="dialog" class="order-form" data-order-form novalidate>
+      <button type="button" class="icon-btn order-close" aria-label="Close" data-order-close><svg class="icon"><use href="#i-close"/></svg></button>
+      <p class="eyebrow">Order on WhatsApp</p>
+      <h2 id="order-title" class="order-title">Your order</h2>
+      <p class="order-area"><svg class="icon icon--sm"><use href="#i-pin"/></svg><span>We deliver only to the <b>7 towns</b> below, around our shop in Madhurandhagam.</span></p>
+      <p class="order-step"><span>1</span>Choose your packs</p>
+      <div class="order-cart" data-order-cart></div>
+      <p class="order-total" data-order-total aria-live="polite"></p>
+
+      <p class="order-step"><span>2</span>Your town</p>
+      <fieldset class="town-pick" data-town-pick>
+        <legend class="visually-hidden">Your town</legend>
+        <label class="town-chip"><input type="radio" name="town" value="Madhurandhagam" /><span>Madhurandhagam</span></label>
+        <label class="town-chip"><input type="radio" name="town" value="Chengalpattu" /><span>Chengalpattu</span></label>
+        <label class="town-chip"><input type="radio" name="town" value="Thirukazhukuntram" /><span>Thirukazhukuntram</span></label>
+        <label class="town-chip"><input type="radio" name="town" value="Mahabalipuram" /><span>Mahabalipuram</span></label>
+        <label class="town-chip"><input type="radio" name="town" value="Kalpakkam" /><span>Kalpakkam</span></label>
+        <label class="town-chip"><input type="radio" name="town" value="Anupuram" /><span>Anupuram</span></label>
+        <label class="town-chip"><input type="radio" name="town" value="Melmaruvathur" /><span>Melmaruvathur</span></label>
+      </fieldset>
+      <p class="order-step"><span>3</span>Delivery address</p>
+      <fieldset class="order-type">
+        <legend class="visually-hidden">Delivering to</legend>
+        <label class="type-card"><input type="radio" name="place" value="apartment" checked /><span><svg class="icon"><use href="#i-building"/></svg>Apartment</span></label>
+        <label class="type-card"><input type="radio" name="place" value="street" /><span><svg class="icon"><use href="#i-home"/></svg>Street / House</span></label>
+      </fieldset>
+
+      <div class="order-fields" data-fields="apartment">
+        <label class="field"><span>Apartment name</span><input name="apartment" autocomplete="off" placeholder="e.g. Green Park Residency" data-required="Please add your apartment name" /></label>
+        <label class="field"><span>Block &amp; flat no.</span><input name="flat" autocomplete="off" placeholder="e.g. Block B, Flat 12" data-required="Please add your block and flat number" /></label>
+      </div>
+      <div class="order-fields" data-fields="street" hidden>
+        <label class="field"><span>Door no.</span><input name="door" autocomplete="off" placeholder="e.g. No. 5" data-required="Please add your door number" /></label>
+        <label class="field"><span>Street name</span><input name="street" autocomplete="off" placeholder="e.g. Perumal Koil Street" data-required="Please add your street name" /></label>
+      </div>
+      <div class="order-fields order-fields--single">
+        <label class="field"><span>Landmark <small>(optional)</small></span><input name="landmark" autocomplete="off" placeholder="e.g. Near the temple" /></label>
+      </div>
+      <p class="order-error" role="alert" data-order-error></p>
+
+      <details class="order-preview">
+        <summary>Preview your WhatsApp message</summary>
+        <div class="chat-preview"><p class="chat-bubble" data-order-message></p></div>
+      </details>
+      <a class="btn btn--gold btn--block" href="https://wa.me/918124834607" target="_blank" rel="noopener" data-order-link>
+        <svg class="icon"><use href="#i-whatsapp"/></svg><span>Send order on WhatsApp</span>
+      </a>
+      <p class="order-note">Opens WhatsApp to +91 81248 34607 with your order ready to send</p>
+    </form>
+  </dialog>
+
+
+  <script src="main.js" defer></script>
+</body>
+</html>
