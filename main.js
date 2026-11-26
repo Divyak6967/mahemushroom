@@ -212,7 +212,7 @@
   const toggle = $("[data-menu-toggle]");
   const mobileMenu = $("[data-mobile-menu]");
   // everything behind the open menu is made inert so focus stays inside it
-  const behind = $$("main, footer, .proto-badge");
+  const behind = $$("main, footer");
   const setMenu = (open) => {
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
@@ -469,16 +469,6 @@
   /* ---------- Back to top ---------- */
   const toTop = $("[data-to-top]");
   if (toTop) toTop.addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth" }));
-
-  /* ---------- Prototype badge ---------- */
-  const badge = $("[data-proto-badge]");
-  try {
-    if (sessionStorage.getItem("proto-badge") === "hidden") badge.hidden = true;
-  } catch {}
-  $("[data-proto-close]").addEventListener("click", () => {
-    badge.hidden = true;
-    try { sessionStorage.setItem("proto-badge", "hidden"); } catch {}
-  });
 
   /* ---------- Scroll reveal ---------- */
   const reveal = new IntersectionObserver(
