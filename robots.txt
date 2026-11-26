@@ -1,0 +1,5 @@
+# Every page may be indexed by search engines
+User-agent: *
+Allow: /
+
+Sitemap: https://mahe-mushroom.netlify.app/sitemap.xml

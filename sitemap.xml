@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Pages for Google to index. The single recipe pages are left out while the recipes
+     are samples; add them once the real recipes are in. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://mahe-mushroom.netlify.app/</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://mahe-mushroom.netlify.app/our-story.html</loc><lastmod>2026-11-26</lastmod></url>
+  <url><loc>https://mahe-mushroom.netlify.app/recipes.html</loc><lastmod>2026-11-26</lastmod></url>
+</urlset>
